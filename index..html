@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLOWFIT — AI-Powered Fashion Fit Intelligence</title>
+
+    <meta
+        name="description"
+        content="FLOWFIT uses AI-powered fashion fit intelligence to understand your profile and recommend the fit that works for you."
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    >
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div id="loader" class="loader">
+    <div class="loader-inner">
+
+        <div class="loader-brand">
+            F L O W F I T
+        </div>
+
+        <div class="loader-line">
+            <span id="loaderProgress"></span>
+        </div>
+
+        <div class="loader-meta">
+            AI-POWERED FASHION FIT INTELLIGENCE
+            <span>© 2026</span>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     GLOBAL BACKGROUND
+========================================================= -->
+
+<div class="global-background">
+
+    <canvas id="flowCanvas"></canvas>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="ambient ambient-three"></div>
+
+    <div class="grain"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="#home" class="brand">
+        <span>F</span>
+        <span>L</span>
+        <span>O</span>
+        <span>W</span>
+        <span>F</span>
+        <span>I</span>
+        <span>T</span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="#home" class="active">
+            <span>01</span>
+            HOME
+        </a>
+
+        <a href="#how-it-works">
+            <span>02</span>
+            HOW IT WORKS
+        </a>
+
+        <a href="#insights">
+            <span>03</span>
+            INSIGHTS
+        </a>
+
+        <a href="#intelligence">
+            <span>04</span>
+            DATA INTELLIGENCE
+        </a>
+
+        <a href="#model-lab">
+            <span>05</span>
+            MODEL LAB
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button
+            id="themeToggle"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+        >
+            <i class="ri-sun-line"></i>
+            <i class="ri-moon-line"></i>
+        </button>
+
+        <a href="#fit-engine" class="nav-cta">
+            ANALYZE FIT
+            <i class="ri-arrow-right-up-line"></i>
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main id="home">
+
+<section class="hero">
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-copy reveal">
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-line"></span>
+
+            <span>
+                AI-POWERED FASHION FIT INTELLIGENCE
+            </span>
+
+        </div>
+
+        <h1>
+
+            Know the
+            <em>fit</em>
+
+            <br>
+
+            before you
+            <br>
+
+            wear it.
+
+        </h1>
+
+        <p class="hero-description">
+
+            FLOWFIT uses artificial intelligence to understand
+            your body profile, clothing preferences and historical
+            fit patterns — transforming uncertainty into
+            intelligent fashion decisions.
+
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#fit-engine" class="luxury-button magnetic">
+
+                <span>ANALYZE YOUR FIT</span>
+
+                <i class="ri-arrow-right-line"></i>
+
+            </a>
+
+            <button class="play-button" id="exploreButton">
+
+                <span class="play-icon">
+                    <i class="ri-play-fill"></i>
+                </span>
+
+                <span>
+                    EXPLORE THE INTELLIGENCE
+                </span>
+
+            </button>
+
+        </div>
+
+        <div class="hero-proof">
+
+            <div>
+                <strong>192K+</strong>
+                <span>REAL FIT REVIEWS</span>
+            </div>
+
+            <div>
+                <strong>AI</strong>
+                <span>FIT CLASSIFICATION</span>
+            </div>
+
+            <div>
+                <strong>01</strong>
+                <span>PERSONAL PROFILE</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="hero-visual">
+
+        <div class="visual-orbit orbit-a"></div>
+        <div class="visual-orbit orbit-b"></div>
+        <div class="visual-orbit orbit-c"></div>
+
+        <div class="visual-core">
+
+            <div class="core-glow"></div>
+
+            <div class="silhouette">
+
+                <div class="head"></div>
+
+                <div class="neck"></div>
+
+                <div class="body"></div>
+
+                <div class="arm arm-left"></div>
+                <div class="arm arm-right"></div>
+
+                <div class="dress"></div>
+
+                <div class="leg leg-left"></div>
+                <div class="leg leg-right"></div>
+
+            </div>
+
+            <div class="platform">
+
+                <div class="platform-ring ring-one"></div>
+                <div class="platform-ring ring-two"></div>
+                <div class="platform-ring ring-three"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Floating measurements -->
+
+        <div class="measurement measurement-height">
+
+            <div class="measurement-point"></div>
+
+            <span>HEIGHT</span>
+            <strong id="heroHeight">165 cm</strong>
+
+            <div class="measurement-line"></div>
+
+        </div>
+
+
+        <div class="measurement measurement-weight">
+
+            <div class="measurement-point"></div>
+
+            <span>WEIGHT</span>
+            <strong id="heroWeight">58 kg</strong>
+
+            <div class="measurement-line"></div>
+
+        </div>
+
+
+        <div class="measurement measurement-body">
+
+            <span>BODY PROFILE</span>
+
+            <strong>HOURGLASS</strong>
+
+            <div class="measurement-icon">
+                <i class="ri-body-scan-line"></i>
+            </div>
+
+        </div>
+
+
+        <!-- AI panel -->
+
+        <div class="hero-intelligence">
+
+            <div class="panel-top">
+
+                <div class="status-dot"></div>
+
+                <span>FLOWFIT INTELLIGENCE</span>
+
+            </div>
+
+            <div class="panel-title">
+                PERFECT FIT
+            </div>
+
+            <div class="panel-subtitle">
+                POWERED BY AI
+            </div>
+
+            <div class="panel-items">
+
+                <div>
+                    <i class="ri-user-line"></i>
+                    <span>Personalized Analysis</span>
+                </div>
+
+                <div>
+                    <i class="ri-t-shirt-line"></i>
+                    <span>Size Recommendation</span>
+                </div>
+
+                <div>
+                    <i class="ri-pulse-line"></i>
+                    <span>Fit Confidence Score</span>
+                </div>
+
+                <div>
+                    <i class="ri-sparkling-2-line"></i>
+                    <span>Fashion Intelligence</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-orb orb-one"></div>
+        <div class="hero-orb orb-two"></div>
+        <div class="hero-orb orb-three"></div>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+
+        <span>SCROLL</span>
+
+        <div class="scroll-line">
+            <span></span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FIT PROBLEM
+========================================================= -->
+
+<section class="problem-section section">
+
+    <div class="container problem-grid">
+
+        <div class="problem-copy reveal">
+
+            <div class="section-label">
+                THE FIT PROBLEM
+            </div>
+
+            <h2>
+                Size isn't
+                <em>universal.</em>
+                <br>
+                Fit is personal.
+            </h2>
+
+            <p>
+                Every body is different.
+                Every brand fits differently.
+                FLOWFIT bridges the gap between
+                your measurements and the way clothing
+                actually fits.
+            </p>
+
+            <div class="problem-tags">
+
+                <span>REAL DATA</span>
+                <i></i>
+                <span>SMARTER FITS</span>
+                <i></i>
+                <span>BETTER SHOPPING</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="process reveal" id="how-it-works">
+
+            <div class="section-label">
+                HOW IT WORKS
+            </div>
+
+            <div class="process-track">
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="ri-user-3-line"></i>
+                    </div>
+
+                    <h3>
+                        Create Your Profile
+                    </h3>
+
+                    <p>
+                        Share your measurements,
+                        body profile and clothing
+                        preferences.
+                    </p>
+
+                </article>
+
+
+                <div class="process-arrow">
+                    →
+                </div>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="ri-brain-line"></i>
+                    </div>
+
+                    <h3>
+                        AI Analysis
+                    </h3>
+
+                    <p>
+                        Our machine-learning engine
+                        analyzes historical fit patterns.
+                    </p>
+
+                </article>
+
+
+                <div class="process-arrow">
+                    →
+                </div>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div class="process-icon">
+                        <i class="ri-sparkling-line"></i>
+                    </div>
+
+                    <h3>
+                        Get Your Fit
+                    </h3>
+
+                    <p>
+                        Receive your fit prediction,
+                        confidence and size guidance.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FIT ENGINE
+========================================================= -->
+
+<section id="fit-engine" class="engine-section section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                FIT INTELLIGENCE ENGINE
+            </div>
+
+            <h2>
+                Your profile.
+                <br>
+                <em>Decoded.</em>
+            </h2>
+
+            <p>
+                Tell FLOWFIT about yourself.
+                The intelligence engine will translate
+                your profile into a personalized fit signal.
+            </p>
+
+        </div>
+
+
+        <div class="engine-layout">
+
+
+            <!-- FORM -->
+
+            <div class="engine-form glass-card reveal">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="mini-label">
+                            PROFILE INPUT
+                        </span>
+
+                        <h3>
+                            Tell us about you
+                        </h3>
+                    </div>
+
+                    <div class="card-index">
+                        01 / 03
+                    </div>
+
+                </div>
+
+
+                <form id="fitForm">
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label for="age">
+                                AGE
+                            </label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="13"
+                                max="100"
+                                placeholder="24"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="height">
+                                HEIGHT
+                            </label>
+
+                            <input
+                                type="text"
+                                id="height"
+                                name="height"
+                                placeholder="165 cm"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label for="weight">
+                                WEIGHT
+                            </label>
+
+                            <input
+                                type="text"
+                                id="weight"
+                                name="weight"
+                                placeholder="58 kg"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="size">
+                                CURRENT SIZE
+                            </label>
+
+                            <input
+                                type="number"
+                                id="size"
+                                name="size"
+                                min="0"
+                                max="30"
+                                placeholder="8"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label for="body_type">
+                                BODY TYPE
+                            </label>
+
+                            <select
+                                id="body_type"
+                                name="body_type"
+                                required
+                            >
+                                <option value="">
+                                    Select body type
+                                </option>
+
+                                <option value="hourglass">
+                                    Hourglass
+                                </option>
+
+                                <option value="pear">
+                                    Pear
+                                </option>
+
+                                <option value="apple">
+                                    Apple
+                                </option>
+
+                                <option value="rectangle">
+                                    Rectangle
+                                </option>
+
+                                <option value="athletic">
+                                    Athletic
+                                </option>
+
+                                <option value="straight">
+                                    Straight
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="bust_size">
+                                BUST SIZE
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bust_size"
+                                name="bust_size"
+                                placeholder="34B"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label for="category">
+                                CATEGORY
+                            </label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                required
+                            >
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="dress">
+                                    Dress
+                                </option>
+
+                                <option value="top">
+                                    Top
+                                </option>
+
+                                <option value="blouse">
+                                    Blouse
+                                </option>
+
+                                <option value="skirt">
+                                    Skirt
+                                </option>
+
+                                <option value="pants">
+                                    Pants
+                                </option>
+
+                                <option value="gown">
+                                    Gown
+                                </option>
+
+                                <option value="jumpsuit">
+                                    Jumpsuit
+                                </option>
+
+                                <option value="sweater">
+                                    Sweater
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="rented_for">
+                                OCCASION
+                            </label>
+
+                            <select
+                                id="rented_for"
+                                name="rented_for"
+                                required
+                            >
+
+                                <option value="">
+                                    Select occasion
+                                </option>
+
+                                <option value="wedding">
+                                    Wedding
+                                </option>
+
+                                <option value="formal">
+                                    Formal
+                                </option>
+
+                                <option value="party">
+                                    Party
+                                </option>
+
+                                <option value="date">
+                                    Date
+                                </option>
+
+                                <option value="everyday">
+                                    Everyday
+                                </option>
+
+                                <option value="work">
+                                    Work
+                                </option>
+
+                                <option value="vacation">
+                                    Vacation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="rating">
+                            YOUR TYPICAL FIT SATISFACTION
+                        </label>
+
+                        <div class="rating-input">
+
+                            <input
+                                type="range"
+                                id="rating"
+                                name="rating"
+                                min="1"
+                                max="5"
+                                step="1"
+                                value="4"
+                            >
+
+                            <div class="rating-value">
+                                <span id="ratingDisplay">
+                                    4
+                                </span>
+                                / 5
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="analyzeButton"
+                        class="analyze-button magnetic"
+                    >
+
+                        <span>
+                            RUN FIT INTELLIGENCE
+                        </span>
+
+                        <i class="ri-arrow-right-up-line"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- LIVE PROFILE -->
+
+            <div class="profile-visual reveal">
+
+                <div class="profile-orbit"></div>
+
+                <div class="profile-center">
+
+                    <div class="profile-ring">
+
+                        <div class="profile-person">
+
+                            <div class="person-head"></div>
+                            <div class="person-body"></div>
+                            <div class="person-legs"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile-glow"></div>
+
+                </div>
+
+
+                <div class="profile-stat stat-height">
+
+                    <span>HEIGHT</span>
+                    <strong id="previewHeight">
+                        165 cm
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-stat stat-size">
+
+                    <span>SIZE</span>
+                    <strong id="previewSize">
+                        8
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-stat stat-fit">
+
+                    <span>FIT SIGNAL</span>
+
+                    <strong id="previewFit">
+                        READY
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-caption">
+
+                    <span class="live-dot"></span>
+
+                    PROFILE VISUALIZATION
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <div
+            id="resultState"
+            class="result-section hidden"
+        >
+
+            <div class="result-main">
+
+                <div class="result-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI RESULT
+                        </span>
+
+                        <h2>
+                            Your fit,
+                            <em>decoded.</em>
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="resetButton"
+                        class="outline-button"
+                    >
+                        <i class="ri-refresh-line"></i>
+                        NEW ANALYSIS
+                    </button>
+
+                </div>
+
+
+                <div class="result-grid">
+
+
+                    <!-- SCORE -->
+
+                    <div class="score-card glass-card">
+
+                        <div class="score-label">
+                            FIT CONFIDENCE
+                        </div>
+
+                        <div class="confidence-ring">
+
+                            <svg viewBox="0 0 220 220">
+
+                                <circle
+                                    class="ring-bg"
+                                    cx="110"
+                                    cy="110"
+                                    r="92"
+                                ></circle>
+
+                                <circle
+                                    id="confidenceCircle"
+                                    class="ring-progress"
+                                    cx="110"
+                                    cy="110"
+                                    r="92"
+                                ></circle>
+
+                            </svg>
+
+                            <div class="score-center">
+
+                                <strong id="confidenceValue">
+                                    0%
+                                </strong>
+
+                                <span>
+                                    CONFIDENCE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="fit-result">
+
+                            <span>
+                                PREDICTED FIT
+                            </span>
+
+                            <strong id="fitValue">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SIZE -->
+
+                    <div class="size-card glass-card">
+
+                        <span class="score-label">
+                            SIZE INTELLIGENCE
+                        </span>
+
+                        <div class="size-flow">
+
+                            <div class="size-node">
+
+                                <span>
+                                    CURRENT
+                                </span>
+
+                                <strong id="currentSize">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="size-arrow">
+                                →
+                            </div>
+
+                            <div class="size-node recommended">
+
+                                <span>
+                                    RECOMMENDED
+                                </span>
+
+                                <strong id="recommendedSize">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <p id="guidanceMessage">
+                            Your personalized guidance will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RISK -->
+
+                    <div class="risk-card glass-card">
+
+                        <span class="score-label">
+                            FIT RISK
+                        </span>
+
+                        <div
+                            id="riskValue"
+                            class="risk-badge"
+                        >
+                            —
+                        </div>
+
+                        <div class="risk-description">
+
+                            <i class="ri-shield-check-line"></i>
+
+                            <span>
+                                FLOWFIT uses historical fit patterns
+                                to estimate fit confidence.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- PROBABILITIES -->
+
+                <div class="probability-card glass-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="mini-label">
+                                MODEL SIGNAL
+                            </span>
+
+                            <h3>
+                                Fit probability distribution
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div id="probabilities">
+                    </div>
+
+                </div>
+
+
+                <!-- EXPLANATION -->
+
+                <div class="explanation-card glass-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="mini-label">
+                                AI EXPLANATION
+                            </span>
+
+                            <h3>
+                                Why FLOWFIT thinks this
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div id="explanationList">
+                    </div>
+
+                    <div class="guidance-box">
+
+                        <div class="guidance-icon">
+                            <i class="ri-sparkling-2-line"></i>
+                        </div>
+
+                        <div>
+
+                            <strong id="guidanceHeadline">
+                                Your personalized guidance
+                            </strong>
+
+                            <p id="guidanceAction">
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p
+                        id="resultNote"
+                        class="result-note"
+                    ></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INSIGHTS
+========================================================= -->
+
+<section
+    id="insights"
+    class="insights-section section"
+>
+
+    <div class="container">
+
+        <div class="section-heading split reveal">
+
+            <div>
+
+                <div class="section-label">
+                    FEATURED INSIGHTS
+                </div>
+
+                <h2>
+                    Fashion meets
+                    <em>data.</em>
+                </h2>
+
+            </div>
+
+            <p>
+                Explore the patterns hidden inside real-world
+                clothing fit data and understand what they
+                reveal about sizing.
+            </p>
+
+        </div>
+
+
+        <div class="insight-grid">
+
+            <article class="insight-card insight-large reveal">
+
+                <div class="insight-number">
+                    01
+                </div>
+
+                <div class="insight-content">
+
+                    <span>
+                        FIT DISTRIBUTION
+                    </span>
+
+                    <h3>
+                        Fit isn't a
+                        single dimension.
+                    </h3>
+
+                    <p>
+                        Clothing fit is shaped by the interaction
+                        between body measurements, garment category,
+                        size and personal preference.
+                    </p>
+
+                </div>
+
+                <div class="insight-graphic">
+
+                    <div class="bar bar-1"></div>
+                    <div class="bar bar-2"></div>
+                    <div class="bar bar-3"></div>
+
+                </div>
+
+            </article>
+
+
+            <article class="insight-card reveal">
+
+                <div class="insight-number">
+                    02
+                </div>
+
+                <div class="insight-icon">
+                    <i class="ri-ruler-line"></i>
+                </div>
+
+                <span>
+                    BODY PROFILE
+                </span>
+
+                <h3>
+                    Measurements
+                    tell a story.
+                </h3>
+
+                <p>
+                    Height, weight and body profile
+                    can help reveal recurring fit patterns.
+                </p>
+
+            </article>
+
+
+            <article class="insight-card reveal">
+
+                <div class="insight-number">
+                    03
+                </div>
+
+                <div class="insight-icon">
+                    <i class="ri-brain-line"></i>
+                </div>
+
+                <span>
+                    MACHINE LEARNING
+                </span>
+
+                <h3>
+                    Data becomes
+                    intelligence.
+                </h3>
+
+                <p>
+                    FLOWFIT transforms historical reviews
+                    into predictive fit intelligence.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DATA INTELLIGENCE
+========================================================= -->
+
+<section
+    id="intelligence"
+    class="intelligence-section section"
+>
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                DATA INTELLIGENCE
+            </div>
+
+            <h2>
+                Inside the
+                <em>fit universe.</em>
+            </h2>
+
+            <p>
+                Real-world fashion data becomes a living
+                intelligence layer for understanding fit.
+            </p>
+
+        </div>
+
+
+        <div
+            id="analyticsLoading"
+            class="analytics-loading"
+        >
+            LOADING DATA INTELLIGENCE...
+        </div>
+
+
+        <div
+            id="analyticsContent"
+            class="analytics-content hidden"
+        >
+
+            <div class="analytics-stats">
+
+                <div class="analytics-stat">
+
+                    <span>
+                        DATASET RECORDS
+                    </span>
+
+                    <strong id="totalRecords">
+                        —
+                    </strong>
+
+                </div>
+
+                <div class="analytics-stat">
+
+                    <span>
+                        AVG. AGE
+                    </span>
+
+                    <strong id="avgAge">
+                        —
+                    </strong>
+
+                </div>
+
+                <div class="analytics-stat">
+
+                    <span>
+                        AVG. RATING
+                    </span>
+
+                    <strong id="avgRating">
+                        —
+                    </strong>
+
+                </div>
+
+                <div class="analytics-stat">
+
+                    <span>
+                        AVG. SIZE
+                    </span>
+
+                    <strong id="avgSize">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-panels">
+
+                <div class="data-panel">
+
+                    <div class="data-panel-header">
+
+                        <span>
+                            FIT DISTRIBUTION
+                        </span>
+
+                        <i class="ri-pie-chart-line"></i>
+
+                    </div>
+
+                    <div id="fitDistribution">
+                    </div>
+
+                </div>
+
+
+                <div class="data-panel">
+
+                    <div class="data-panel-header">
+
+                        <span>
+                            TOP CATEGORIES
+                        </span>
+
+                        <i class="ri-bar-chart-horizontal-line"></i>
+
+                    </div>
+
+                    <div id="topCategories">
+                    </div>
+
+                </div>
+
+
+                <div class="data-panel model-panel">
+
+                    <div class="data-panel-header">
+
+                        <span>
+                            MODEL PERFORMANCE
+                        </span>
+
+                        <i class="ri-cpu-line"></i>
+
+                    </div>
+
+                    <div id="modelPerformance">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-insight">
+
+                <div class="ai-insight-icon">
+                    <i class="ri-sparkling-2-fill"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        FLOWFIT AI INSIGHT
+                    </span>
+
+                    <p id="aiInsight">
+                        Loading intelligence...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            id="loadAnalytics"
+            class="hidden"
+        >
+            LOAD ANALYTICS
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MODEL LAB
+========================================================= -->
+
+<section
+    id="model-lab"
+    class="model-section section"
+>
+
+    <div class="container model-grid">
+
+        <div class="model-copy reveal">
+
+            <div class="section-label">
+                MODEL LAB
+            </div>
+
+            <h2>
+                Behind every
+                <em>fit signal.</em>
+            </h2>
+
+            <p>
+                FLOWFIT combines structured fashion data,
+                machine learning and personalized profile
+                signals to produce a fit classification.
+            </p>
+
+            <div class="model-list">
+
+                <div>
+
+                    <span>01</span>
+
+                    <strong>
+                        DATA PREPROCESSING
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>02</span>
+
+                    <strong>
+                        FEATURE ENGINEERING
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>03</span>
+
+                    <strong>
+                        MACHINE LEARNING
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>04</span>
+
+                    <strong>
+                        FIT INTELLIGENCE
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="model-visual reveal">
+
+            <div class="model-circle circle-one"></div>
+            <div class="model-circle circle-two"></div>
+            <div class="model-circle circle-three"></div>
+
+            <div class="model-chip chip-one">
+                <span>INPUT</span>
+                <strong>PROFILE</strong>
+            </div>
+
+            <div class="model-chip chip-two">
+                <span>MODEL</span>
+                <strong>ML ENGINE</strong>
+            </div>
+
+            <div class="model-chip chip-three">
+                <span>OUTPUT</span>
+                <strong>FIT</strong>
+            </div>
+
+            <div class="model-core">
+                <i class="ri-brain-line"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-section">
+
+    <div class="final-glow"></div>
+
+    <div class="container final-content reveal">
+
+        <div class="section-label">
+            THE FUTURE OF FIT
+        </div>
+
+        <h2>
+            Stop guessing.
+            <br>
+            Start <em>knowing.</em>
+        </h2>
+
+        <p>
+            Fashion should fit you.
+            Not the other way around.
+        </p>
+
+        <a
+            href="#fit-engine"
+            class="luxury-button large magnetic"
+        >
+
+            <span>
+                DISCOVER YOUR FIT
+            </span>
+
+            <i class="ri-arrow-right-up-line"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="brand footer-logo">
+                FLOWFIT
+            </div>
+
+            <p>
+                AI-Powered Fashion
+                Fit Intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+
+                <span>
+                    EXPLORE
+                </span>
+
+                <a href="#home">Home</a>
+                <a href="#how-it-works">How it works</a>
+                <a href="#insights">Insights</a>
+
+            </div>
+
+            <div>
+
+                <span>
+                    INTELLIGENCE
+                </span>
+
+                <a href="#fit-engine">Fit Engine</a>
+                <a href="#intelligence">Data Intelligence</a>
+                <a href="#model-lab">Model Lab</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 FLOWFIT
+        </span>
+
+        <span>
+            BUILT WITH DATA × AI × FASHION
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
